@@ -1,3 +1,4 @@
+import io
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -111,6 +112,12 @@ for ctx in ctx_values:
     cost_list.append(plan(tmp)["cost"]["per_query"])
 df_ctx = pd.DataFrame({"context": ctx_values, "cost/query ($)": cost_list}).set_index("context")
 st.line_chart(df_ctx)
+
+st.subheader("Export")
+if st.button("Download CSV (batch sweep)"):
+    csv_buf = io.StringIO()
+    pd.DataFrame({"batch": b_values, "p95 (s)": p95_list}).to_csv(csv_buf, index=False)
+    st.download_button("Save CSV", csv_buf.getvalue(), file_name="batch_sweep.csv", mime="text/csv")
 
 st.subheader("Optimizer")
 run_opt = st.button("Run optimizer (min cost subject to SLA)")
