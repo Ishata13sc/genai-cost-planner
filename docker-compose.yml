@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    image: genai-cost-planner:latest
+    environment:
+      - PYTHONPATH=/app
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  ui:
+    image: genai-cost-planner:latest
+    environment:
+      - PYTHONPATH=/app
+      - API_BASE_URL=${API_BASE_URL:-http://localhost:8000}
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    restart: unless-stopped

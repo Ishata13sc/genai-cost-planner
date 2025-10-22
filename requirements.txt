@@ -1,0 +1,7 @@
+streamlit
+pydantic
+numpy
+pytest
+pandas
+fastapi
+uvicorn
