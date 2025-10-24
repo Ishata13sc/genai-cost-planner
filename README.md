@@ -1,3 +1,6 @@
+![CI](https://github.com/Ishata13sc/genai-cost-planner/actions/workflows/ci.yml/badge.svg)
+
+
 # GenAI Cost Planner — Token & Throughput Simulator
 
 A vendor-neutral calculator to estimate GenAI cost and latency. Plug in context/prompt/response lengths, QPS, cache, batch size, and token prices. Get cost per query/1k/day/month, p50/p95 latency, utilization, and optimization hints.
