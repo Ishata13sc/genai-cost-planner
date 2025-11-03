@@ -1,0 +1,8 @@
+{
+  "default":        { "price_in": 0.50, "price_out": 1.50, "tps_prefill": 20000, "tps_decode": 150 },
+  "cheap-fast":     { "price_in": 0.20, "price_out": 0.60, "tps_prefill": 30000, "tps_decode": 250 },
+  "balanced-xl":    { "price_in": 0.80, "price_out": 2.40, "tps_prefill": 25000, "tps_decode": 180 },
+  "ultra-quality":  { "price_in": 1.20, "price_out": 3.50, "tps_prefill": 18000, "tps_decode": 120 },
+  "vendorA-lite":   { "price_in": 0.12, "price_out": 0.40, "tps_prefill": 36000, "tps_decode": 320 },
+  "vendorB-pro":    { "price_in": 0.90, "price_out": 2.70, "tps_prefill": 22000, "tps_decode": 160 }
+}

@@ -4,3 +4,9 @@ __pycache__/
 .streamlit/
 .env
 .DS_Store
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+export.csv
+.DS_Store

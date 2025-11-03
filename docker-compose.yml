@@ -1,11 +1,12 @@
 services:
   api:
     build: .
-    image: genai-cost-planner:latest
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
     environment:
       - PYTHONPATH=/app
-      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
-    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - API_KEY=${API_KEY}
+      - RATE_LIMIT_RPS=${RATE_LIMIT_RPS}
     ports:
       - "8000:8000"
     restart: unless-stopped

@@ -1,0 +1,11 @@
+{
+  "Default": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "price_input": 15000,
+    "price_output": 30000,
+    "avg_in": 600,
+    "avg_out": 300,
+    "rpm": 5
+  }
+}
